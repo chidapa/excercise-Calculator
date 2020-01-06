@@ -23,7 +23,17 @@ class MainActivity : AppCompatActivity() {
         btnCalculate.setOnClickListener {
             var v1:Int = edtV1.text.toString().toInt()
             var v2:Int = edtV2.text.toString().toInt()
-            var result = v1+v2
+            var result = 0
+
+
+
+            when(rgOperator.checkedRadioButtonId){
+                R.id.rbAddition-> result = v1+v2
+                R.id.rbSubstraction-> result = v1-v2
+                R.id.rbMultiplication-> result = v1*v2
+                R.id.rbDivision-> result = v1/v2
+
+            }
 
             tvResult.setText(result.toString())
         }
