@@ -44,14 +44,39 @@
         android:layout_height="wrap_content"
         android:text="I agree"
         android:checked="true"/>
-    <RadioButton
+
+    <RadioGroup
+        android:id="@+id/rgOperator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"/>
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"/>
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/rbAddition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+        <RadioButton
+            android:id="@+id/rbSubstraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"/>
+        <RadioButton
+            android:id="@+id/rbMultiplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"/>
+        <RadioButton
+            android:id="@+id/rbDivision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"/>
+
+
+
+    </RadioGroup>
+
 
 
 
