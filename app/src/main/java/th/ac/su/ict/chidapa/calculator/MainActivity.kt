@@ -2,10 +2,7 @@ package th.ac.su.ict.chidapa.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,22 +17,28 @@ class MainActivity : AppCompatActivity() {
 
         var rgOperator = findViewById<RadioGroup>(R.id.rgOperator)
 
+        var checkbox1 = findViewById<CheckBox>(R.id.checkbox1)
+
         btnCalculate.setOnClickListener {
-            var v1:Int = edtV1.text.toString().toInt()
-            var v2:Int = edtV2.text.toString().toInt()
-            var result = 0
+
+            if (checkbox1.isChecked) {
+                var v1:Int = edtV1.text.toString().toInt()
+                var v2:Int = edtV2.text.toString().toInt()
+                var result = 0
 
 
 
-            when(rgOperator.checkedRadioButtonId){
-                R.id.rbAddition-> result = v1+v2
-                R.id.rbSubstraction-> result = v1-v2
-                R.id.rbMultiplication-> result = v1*v2
-                R.id.rbDivision-> result = v1/v2
+                when(rgOperator.checkedRadioButtonId){
+                    R.id.rbAddition-> result = v1+v2
+                    R.id.rbSubstraction-> result = v1-v2
+                    R.id.rbMultiplication-> result = v1*v2
+                    R.id.rbDivision-> result = v1/v2
 
+                }
+
+                tvResult.setText(result.toString())
             }
-
-            tvResult.setText(result.toString())
         }
+
     }
 }
